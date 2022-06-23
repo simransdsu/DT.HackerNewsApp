@@ -15,9 +15,7 @@ struct ContentView: View {
     NavigationView {
       List {
         ForEach(viewModel.posts, id: \.objectID) { post in
-          NavigationLink {
-            DetailView(url: post.url)
-          } label: {
+          NavigationLink(destination: DetailView(url: post.url)) {
             Text(post.title)
               .font(.title3)
               .padding(.vertical, 4)
